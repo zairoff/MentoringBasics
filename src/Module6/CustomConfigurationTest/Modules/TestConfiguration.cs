@@ -4,13 +4,13 @@ using CustomConfiguration.Enum;
 
 namespace CustomConfigurationTest.Modules
 {
-    [Configuration("fakePath", ProviderType.Xml)]
+    [Configuration(@"C:\Projects\SMT\src\SMT.Api\appsettings.json", "Test", ProviderType.Json)]
     internal class TestConfiguration : BaseConfiguration
     {
-        [ConfigurationProperty("name")]
+        [ConfigurationProperty("Name")]
         public string? Name { get; set; }
 
-        [ConfigurationProperty("integer")]
-        public int Integer { get; set; }
+        [ConfigurationProperty("Value")]
+        public string? Value { get; set; }
     }
 }
