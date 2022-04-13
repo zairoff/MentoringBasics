@@ -10,7 +10,7 @@ namespace CustomConfiguration.Attributes
         public string Section { get; private set; }
         public ProviderType ProviderType { get; private set; }
 
-        public ConfigurationAttribute(string path, ProviderType providerType, string section)
+        public ConfigurationAttribute(string path, string section, ProviderType providerType)
         {
             Path = path;
             Section = section;
