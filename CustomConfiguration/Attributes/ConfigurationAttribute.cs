@@ -6,13 +6,13 @@ namespace CustomConfiguration.Attributes
     [AttributeUsage(AttributeTargets.Class)]
     public class ConfigurationAttribute : Attribute
     {
-        private readonly string _name;
-        private readonly ProviderType _providerType;
+        public string Path { get; private set; }
+        public ProviderType ProviderType { get; private set; }
 
-        public ConfigurationAttribute(string name, ProviderType providerType)
+        public ConfigurationAttribute(string path, ProviderType providerType)
         {
-            _name = name;
-            _providerType = providerType;
+            Path = path;
+            ProviderType = providerType;
         }
     }
 }

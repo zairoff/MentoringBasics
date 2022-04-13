@@ -5,11 +5,11 @@ namespace CustomConfiguration.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     public class ConfigurationPropertyAttribute : Attribute
     {
-        private readonly string _name;
+        public string Key { get; private set; }
 
-        public ConfigurationPropertyAttribute(string name)
+        public ConfigurationPropertyAttribute(string key)
         {
-            _name = name;
+            Key = key;
         }
     }
 }
