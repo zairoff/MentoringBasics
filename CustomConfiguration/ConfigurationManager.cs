@@ -50,7 +50,8 @@ namespace CustomConfiguration
 
             var configurationProvider = ConfigurationProviderFactory
                 .GetConfigurationProvider(configurationAttribute.ProviderType,
-                                            configurationAttribute.Path);
+                                            configurationAttribute.Path,
+                                            configurationAttribute.Section);
 
             var result = new Dictionary<string, object>();
 
