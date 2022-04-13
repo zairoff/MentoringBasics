@@ -13,14 +13,15 @@ namespace CustomConfiguration
         public T LoadConfiguration<T>()  where T : BaseConfiguration, new()
         {
             var result = new T();
-            var configurationAttribute =GetConfigurationAttribute<T>();
+            var configurationAttribute = GetConfigurationAttribute<T>();
 
             if (configurationAttribute == null)
                 throw new InvalidOperationException("Custom attribute not found");
 
             var configurationProvider = ConfigurationProviderFactory
                 .GetConfigurationProvider(configurationAttribute.ProviderType,
-                                            configurationAttribute.Path);
+                                            configurationAttribute.Path,
+                                            configurationAttribute.Section);
 
             _configuration = configurationProvider.LoadConfiguration();
 
@@ -33,7 +34,6 @@ namespace CustomConfiguration
 
                 if(_configuration.TryGetValue(propertyAttribute.Key, out var value))
                 {
-                    //var typeDescr = TypeDescriptor.GetConverter(property.PropertyType);
                     property.SetValue(result, (value));
                 }
             }
