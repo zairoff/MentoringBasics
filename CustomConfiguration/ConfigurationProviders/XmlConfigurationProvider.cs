@@ -13,12 +13,12 @@ namespace CustomConfiguration.ConfigurationProviders
             _path = path;
         }
 
-        public Dictionary<string, string> LoadConfiguration()
+        public Dictionary<string, object> LoadConfiguration()
         {
-            return new Dictionary<string, string> { { "integer", "1" } };
+            return new Dictionary<string, object> { { "integer", "1" }, { "name", "Cookie" } };
         }
 
-        public void SaveConfiguration(Dictionary<string, string> configuration)
+        public void SaveConfiguration(Dictionary<string, object> configuration)
         {
             throw new NotImplementedException();
         }

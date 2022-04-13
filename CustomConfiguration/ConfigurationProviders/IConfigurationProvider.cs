@@ -4,7 +4,7 @@ namespace CustomConfiguration.ConfigurationProviders
 {
     public interface IConfigurationProvider
     {
-        void SaveConfiguration(Dictionary<string, string> configuration);
-        Dictionary<string, string> LoadConfiguration();
+        void SaveConfiguration(Dictionary<string, object> configuration);
+        Dictionary<string, object> LoadConfiguration();
     }
 }
