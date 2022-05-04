@@ -10,9 +10,8 @@ namespace CustomConfiguration.Factory
             IConfigurationProvider configurationProvider;
             switch (provider)
             {
-                case ProviderType.Xml: configurationProvider = new XmlConfigurationProvider(path); break;
                 case ProviderType.Json: configurationProvider = new JsonConfigurationProvider(path, section); break;
-                default: configurationProvider = new XmlConfigurationProvider(path); break;
+                default: configurationProvider = new JsonConfigurationProvider(path, section); break;
             }
 
             return configurationProvider;
