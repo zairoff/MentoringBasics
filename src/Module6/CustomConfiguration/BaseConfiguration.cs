@@ -1,6 +1,6 @@
 ﻿namespace CustomConfiguration
 {
-    public class BaseConfiguration
+    public abstract class BaseConfiguration
     {
     }
 }
