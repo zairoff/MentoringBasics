@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Katas.RecentlyUsedList
+namespace Katas.Kata1
 {
-    public class List
+    public class RecentlyUsedList
     {
         private readonly LinkedList<string> _items;
         private readonly HashSet<string> _holder;
         private readonly int _capacity;
         private int _count = 0;
 
-        public List(int capacity = 5)
+        public RecentlyUsedList(int capacity = 5)
         {
             _items = new LinkedList<string>();
             _holder = new HashSet<string>();

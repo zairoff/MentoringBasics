@@ -1,4 +1,4 @@
-using Katas.RecentlyUsedList;
+using Katas.Kata1;
 using System;
 using Xunit;
 
@@ -10,7 +10,7 @@ namespace UnitTests
         public void Add_WhenInputNullOrEmpty_ShouldThrowException()
         {
             // Arrange
-            var list = new List();
+            var list = new RecentlyUsedList();
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => list.Add(null));
@@ -20,7 +20,7 @@ namespace UnitTests
         public void Add_WhenListIsFull_ShouldThrowException()
         {
             // Arrange
-            var list = new List(1);
+            var list = new RecentlyUsedList(1);
 
             // Act
             list.Add("1");
@@ -33,7 +33,7 @@ namespace UnitTests
         public void Add_WhenListContainsDuplicateInput_ShouldThrowException()
         {
             // Arrange
-            var list = new List();
+            var list = new RecentlyUsedList();
 
             // Act
             list.Add("1");
@@ -46,7 +46,7 @@ namespace UnitTests
         public void Add_WhenInputExpected_ListFirstItemShouldBeLastAdded()
         {
             // Arrange
-            var list = new List();
+            var list = new RecentlyUsedList();
 
             // Act
             list.Add("1");
@@ -61,7 +61,7 @@ namespace UnitTests
         public void Indexer_WhenIndexOutOfRange_ShouldThrowException()
         {
             // Arrange
-            var list = new List();
+            var list = new RecentlyUsedList();
 
             // Act & Assert 
             Assert.Throws<IndexOutOfRangeException>(() => list[6]);
@@ -71,7 +71,7 @@ namespace UnitTests
         public void Indexer_WhenIndexExcpected_ShouldReturnItem()
         {
             // Arrange
-            var list = new List();
+            var list = new RecentlyUsedList();
             list.Add("1");
 
             // Act
