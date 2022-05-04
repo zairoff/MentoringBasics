@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CustomConfiguration.Exceptions;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +37,22 @@ namespace CustomConfiguration.ConfigurationProviders
 
         public void SaveConfiguration(Dictionary<string, object> keyValuePairs)
         {
-            throw new NotImplementedException();
+            var section = _configuration.GetSection(_section);
+
+            var isSectionExists = section.Exists();
+
+            if (!isSectionExists)
+                throw new SectionNotFoundException($"Section {_section} not found");
+
+            var items = section.GetChildren();
+
+            foreach (var item in items)
+            {
+                if(keyValuePairs.TryGetValue(item.Key, out object value))
+                {
+                    _configuration[item.Key] = value.ToString();
+                }
+            }
         }
     }
 }
