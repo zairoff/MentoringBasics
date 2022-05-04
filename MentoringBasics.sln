@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructs", "src\Module7\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructsTest", "src\Module7\DataStructsTest\DataStructsTest.csproj", "{5A06EA65-ADFA-4418-B8AF-66468C05E392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{F2F47878-8194-43D3-B70E-A081F5C29612}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "src\Module8\UnitTests\UnitTests.csproj", "{F2F47878-8194-43D3-B70E-A081F5C29612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas", "Katas\Katas.csproj", "{D0C30F6B-87E6-4DD7-B5AD-75FAF2931706}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas", "src\Module8\Katas\Katas.csproj", "{D0C30F6B-87E6-4DD7-B5AD-75FAF2931706}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
