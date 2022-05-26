@@ -6,14 +6,12 @@ namespace Katas.Kata1
     public class RecentlyUsedList
     {
         private readonly LinkedList<string> _items;
-        private readonly HashSet<string> _holder;
         private readonly int _capacity;
         private int _count = 0;
 
         public RecentlyUsedList(int capacity = 5)
         {
             _items = new LinkedList<string>();
-            _holder = new HashSet<string>();
             _capacity = capacity;
         }
 
@@ -25,10 +23,9 @@ namespace Katas.Kata1
             if (_count == _capacity)
                 throw new OverflowException();
 
-            if (_holder.Contains(input))
+            if (IsValueExist(input))
                 throw new InvalidOperationException($"List already has {input} input");
 
-            _holder.Add(input);
             _items.AddFirst(input);
             _count++;
         }
@@ -51,6 +48,19 @@ namespace Katas.Kata1
 
                 return dest.Value;
             }
+        }
+
+        private bool IsValueExist(string value)
+        {
+            var head = _items.First;
+            while (head != null)
+            {
+                if (head.Value.Equals(value))
+                    return true;
+
+                head = head.Next;
+            }
+            return false;
         }
     }
 }
