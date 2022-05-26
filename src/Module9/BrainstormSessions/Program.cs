@@ -3,7 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using Serilog.Sinks.Email;
 using System.IO;
+using System.Net;
 
 namespace BrainstormSessions
 {
@@ -18,7 +20,22 @@ namespace BrainstormSessions
 
             Log.Logger = new LoggerConfiguration()
                     .ReadFrom.Configuration(configuration)
-                    .CreateLogger();
+                    // Implemented from here as well, without lack 
+                    /*.WriteTo.Email(new EmailConnectionInfo
+                    {
+                        FromEmail = "--@gmail.com",
+                        ToEmail = "--@gmail.com",
+                        MailServer = "smtp.gmail.com",
+                        NetworkCredentials = new NetworkCredential
+                        {
+                            UserName = "--@gmail.com",
+                            Password = "SUPERSECRET"
+                        },
+                        EnableSsl = true,
+                        Port = 465,
+                        EmailSubject = "Error in app"
+                    },  batchPostingLimit: 10)*/
+                .CreateLogger();
 
 
             CreateHostBuilder(args).Build().Run();
