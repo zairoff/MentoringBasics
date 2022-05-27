@@ -12,7 +12,7 @@ namespace SerializationTest
     public class XMLSerializerTests
     {
         [Fact]
-        public void Serialize_And_Deserialize_Should_Serialize_Object_AsXml_And_Deserialize()
+        public void Serialize_Deserialize_AsXml()
         {
             var departmnent = new Department
             {

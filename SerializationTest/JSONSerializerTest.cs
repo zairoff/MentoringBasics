@@ -8,7 +8,7 @@ namespace SerializationTest
     public class JSONSerializerTest
     {
         [Fact]
-        public void Serialize_And_Deserialize_Should_Serialize_Object_AsBinary_And_Deserialize()
+        public void Serialize_Deserialize_AsJson()
         {
             var departmnent = new Department
             {
