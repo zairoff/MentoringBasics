@@ -14,5 +14,15 @@ namespace Serialization
         {
            return new FileStream(path, FileMode.Open);
         }
+
+        public string ReadAllText(string path)
+        {
+            return File.ReadAllText(path);
+        }
+
+        public void WriteAllText(string path, string data)
+        {
+            File.WriteAllText(path, data);
+        }
     }
 }
