@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Katas", "src\Module8\Katas\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainstormSessions", "src\Module9\BrainstormSessions\BrainstormSessions.csproj", "{7F33A21C-3EED-4904-935B-DE0BE9E55C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{4E9F940E-6D6F-4F7E-9903-A36BBDB4CFD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "src\Module10\Serialization\Serialization.csproj", "{4E9F940E-6D6F-4F7E-9903-A36BBDB4CFD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationConsole", "SerializationConsole\SerializationConsole.csproj", "{4309648A-2997-4E38-BE1D-DB8BE4338678}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationConsole", "src\Module10\SerializationConsole\SerializationConsole.csproj", "{4309648A-2997-4E38-BE1D-DB8BE4338678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationTest", "SerializationTest\SerializationTest.csproj", "{83BF1B56-AC22-43C2-8BF0-A5DA8200ED4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationTest", "src\Module10\SerializationTest\SerializationTest.csproj", "{83BF1B56-AC22-43C2-8BF0-A5DA8200ED4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
