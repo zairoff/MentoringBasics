@@ -1,4 +1,5 @@
 ﻿using Serialization.Contract;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -22,11 +23,24 @@ namespace Serialization
             return result;
         }
 
+        public IEnumerable<T> DesirializeList<T>(string path)
+        {
+            using var stream = _fileSystem.OpenFileStream(path);
+            var result = (IEnumerable<T>)_formatter.Deserialize(stream);
+
+            return result;
+        }
+
         public void Serialize<T>(T entity, string path)
         {
             using var stream = _fileSystem.CreateFileStream(path);
             _formatter.Serialize(stream, entity);
-            stream.Close();
+        }
+
+        public void Serialize<T>(IEnumerable<T> entity, string path)
+        {
+            using var stream = _fileSystem.CreateFileStream(path);
+            _formatter.Serialize(stream, entity);
         }
     }
 }

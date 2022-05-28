@@ -20,6 +20,11 @@ namespace Serialization
             return File.ReadAllText(path);
         }
 
+        public FileStream ReadStream(string path)
+        {
+            return new FileStream(path, FileMode.Open, FileAccess.Read);
+        }
+
         public void WriteAllText(string path, string data)
         {
             File.WriteAllText(path, data);
