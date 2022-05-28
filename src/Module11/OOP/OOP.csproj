@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Module10\Serialization\Serialization.csproj" />
+    <ProjectReference Include="..\..\Module10\Serialization\Serialization.csproj" />
   </ItemGroup>
 
 </Project>

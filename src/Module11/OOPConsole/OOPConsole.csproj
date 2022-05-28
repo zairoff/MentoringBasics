@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OOP\OOP.csproj" />
-    <ProjectReference Include="..\src\Module10\Serialization\Serialization.csproj" />
   </ItemGroup>
 
 </Project>
