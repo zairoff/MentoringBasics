@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OOP\OOP.csproj" />
+    <ProjectReference Include="..\src\Module10\Serialization\Serialization.csproj" />
+  </ItemGroup>
+
+</Project>
