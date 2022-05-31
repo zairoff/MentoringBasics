@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace OOP.Documents
 {
-    public class Patent : IPatentDocument
+    public class Patent : IDocument
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public DateTime PublishedDate { get; set; }
         public List<string> Authors { get; set; }

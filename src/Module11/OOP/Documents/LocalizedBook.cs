@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 namespace OOP.Documents
 {
-    public class LocalizedBook : IBookDocument
+    public class LocalizedBook : IDocument
     {
+        public int Id { get; set; }
         public string Isbn { get; set; }
         public int Pages { get; set; }
         public List<string> Authors { get; set; }
