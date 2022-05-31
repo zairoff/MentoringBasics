@@ -1,49 +1,46 @@
-﻿using OOP.Documents;
+﻿using OOP.Contract;
+using OOP.Documents;
 using OOP.Repository;
-using Serialization;
 using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace OOPConsole
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            var books = new List<Book>
+            if (args.Length < 1)
+                return;
+
+            var repo = new FileRepository<IDocument>(AppDomain.CurrentDomain.BaseDirectory);
+
+            var documents = repo.Find(b => b.Contains(args[0]));
+
+            foreach(var document in documents)
             {
-                new Book
-                {
-                    Isbn = "123",
-                    Authors = new List<string>{"AA", "BB"},
-                    Pages = 12,
-                    Title = "CSharp"
-                },
-                new Book
-                {
-                    Isbn = "567",
-                    Authors = new List<string>{"CC", "DD"},
-                    Pages = 27,
-                    Title = "Java"
-                },
-                new Book
-                {
-                    Isbn = "65789",
-                    Authors = new List<string>{"EE", "FF"},
-                    Pages = 721,
-                    Title = "C++"
-                }
-            };
+                Print(document);
+            }
+        }
 
-            var fileSystem = new FileSystem();
-            var jsonSerializer = new JSONSerializer(fileSystem);
-            jsonSerializer.Serialize(books, "book.json");
-
-            var repo = new FileRepository<Book>(fileSystem, "book.json");
-
-            var result = await repo.FindAsync(b => b.Pages == 721);
-            Console.ReadLine();
+        static void Print(IDocument document)
+        {
+            var type = document.GetType().Name.ToLower();
+            switch (type)
+            {
+                case "book":
+                    var book = (Book)document;
+                    Console.Write($"Book found: \r\nid:{book.Id}, title:{book.Title}\r\n");
+                    break;
+                case "patent":
+                    var patent = (Patent)document;
+                    Console.Write($"Patent found: \r\nid:{patent.Id}, title:{patent.Title}\r\n");
+                    break;
+                case "magazine":
+                    var magazine = (Magazine)document;
+                    Console.Write($"Magazine found: \r\nid:{magazine.Id}, title:{magazine.Title}\r\n");
+                    break;
+                default: break;
+            }
         }
     }
 }
