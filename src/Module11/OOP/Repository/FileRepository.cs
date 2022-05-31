@@ -1,11 +1,11 @@
 ﻿using OOP.Contract;
+using OOP.Documents;
 using OOP.Repository.Contract;
+using Serialization;
 using Serialization.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace OOP.Repository
 {
@@ -13,21 +13,54 @@ namespace OOP.Repository
     {
         private readonly IFileSystem _fileSystem;
         private readonly string _path;
+        private const string _fileType = "*.json";
 
-        public FileRepository(IFileSystem fileSystem, string path)
+        public FileRepository(string path)
         {
-            _fileSystem = fileSystem;
+            _fileSystem = new FileSystem();
             _path = path;
         }
 
-        public async Task<IEnumerable<T>> FindAsync(Func<T, bool> filter)
+        // predicate with string is not ideal, if we move to database that will be problem
+        public IEnumerable<T> Find(Func<string, bool> filter)
         {
-            using var stream = _fileSystem.ReadStream(_path);
+            var allFiles = _fileSystem.GetFiles(_path, _fileType);
 
-            // How about using IQueryable with Expression Func?
-            var jsonArray = await JsonSerializer.DeserializeAsync<IEnumerable<T>>(stream);
+            var filteredFiles = allFiles.Where(filter);
 
-            var result = jsonArray.Where(filter).ToList();
+            var result = new List<T>();
+
+            foreach(var file in filteredFiles)
+            {
+                var fileName = _fileSystem.GetFileNameWithoutExtension(file);
+                var splited = fileName.Split('_');
+
+                if (splited.Length < 2)
+                    throw new InvalidOperationException();
+
+                var jsonString = _fileSystem.ReadAllText(file);
+                var type = GetType(splited[0]);
+
+                var method = typeof(JsonConverter).GetMethod("Desirialize");
+                var jsonRef = method.MakeGenericMethod(type);
+                var obj = (T)jsonRef.Invoke(new JsonConverter(), new object[] { jsonString });
+                result.Add(obj);
+            }
+
+            return result;
+        }
+
+        // It breaks Open Closed Principle, when new document will be added, this method should be modified
+        private static Type GetType(string type)
+        {
+            Type result;
+            switch (type.ToLower())
+            {
+                case "book": result = typeof(Book); break;
+                case "patent": result = typeof(Patent); break;
+                case "magazine": result = typeof(Magazine); break;
+                default: result = typeof(IDocument); break;
+            }
 
             return result;
         }
