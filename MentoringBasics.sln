@@ -23,9 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializationConsole", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializationTest", "src\Module10\SerializationTest\SerializationTest.csproj", "{83BF1B56-AC22-43C2-8BF0-A5DA8200ED4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "src\Module11\OOP\OOP.csproj", "{F5749D86-B988-4901-B3B9-DEFA99A707E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "src\Module11\OOP\OOP.csproj", "{F5749D86-B988-4901-B3B9-DEFA99A707E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOPConsole", "src\Module11\OOPConsole\OOPConsole.csproj", "{C36050A7-355F-4383-BA88-C36B98B5815C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPConsole", "src\Module11\OOPConsole\OOPConsole.csproj", "{C36050A7-355F-4383-BA88-C36B98B5815C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1", "src\Module12\Task1\Task1.csproj", "{F368EEC1-B735-4ECE-B501-402A7DB015CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1.Tests", "src\Module12\Task1.Tests\Task1.Tests.csproj", "{E01B40BB-951B-44F7-82F9-989FE3D468B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{C36050A7-355F-4383-BA88-C36B98B5815C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C36050A7-355F-4383-BA88-C36B98B5815C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C36050A7-355F-4383-BA88-C36B98B5815C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F368EEC1-B735-4ECE-B501-402A7DB015CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F368EEC1-B735-4ECE-B501-402A7DB015CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F368EEC1-B735-4ECE-B501-402A7DB015CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F368EEC1-B735-4ECE-B501-402A7DB015CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
