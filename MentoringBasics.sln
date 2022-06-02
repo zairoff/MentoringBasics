@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1", "src\Module12\Task1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1.Tests", "src\Module12\Task1.Tests\Task1.Tests.csproj", "{E01B40BB-951B-44F7-82F9-989FE3D468B7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NET", "src\Module13\ADO.NET\ADO.NET.csproj", "{EBF9A372-C8FD-495B-B108-2C982E4C5042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET.Test", "src\Module13\ADO.NET.Test\ADO.NET.Test.csproj", "{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E01B40BB-951B-44F7-82F9-989FE3D468B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF9A372-C8FD-495B-B108-2C982E4C5042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF9A372-C8FD-495B-B108-2C982E4C5042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF9A372-C8FD-495B-B108-2C982E4C5042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF9A372-C8FD-495B-B108-2C982E4C5042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
