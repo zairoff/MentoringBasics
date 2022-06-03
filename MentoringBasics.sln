@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1.Tests", "src\Module12
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NET", "src\Module13\ADO.NET\ADO.NET.csproj", "{EBF9A372-C8FD-495B-B108-2C982E4C5042}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET.Test", "src\Module13\ADO.NET.Test\ADO.NET.Test.csproj", "{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NET.Test", "src\Module13\ADO.NET.Test\ADO.NET.Test.csproj", "{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM", "src\Module14\ORM\ORM.csproj", "{97F5532F-907D-4E64-90DA-B4513FB54332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.Test", "src\Module14\ORM.Test\ORM.Test.csproj", "{39033D79-6D6A-4EA1-82E0-0151DD7BD450}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F5532F-907D-4E64-90DA-B4513FB54332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F5532F-907D-4E64-90DA-B4513FB54332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F5532F-907D-4E64-90DA-B4513FB54332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F5532F-907D-4E64-90DA-B4513FB54332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
