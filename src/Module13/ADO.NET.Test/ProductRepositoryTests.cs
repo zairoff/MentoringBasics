@@ -28,6 +28,7 @@ namespace ADO.NET.Test
                 Width = 1.5M
             };
 
+            await _productRepository.RemoveAllAsync();
             await _productRepository.AddAsync(product);
 
             var result = await _productRepository.GetAsync(1);
@@ -50,6 +51,7 @@ namespace ADO.NET.Test
                 Width = 1.5M
             };
 
+            await _productRepository.RemoveAllAsync();
             await _productRepository.AddAsync(product);
             await _productRepository.RemoveAllAsync();
 
