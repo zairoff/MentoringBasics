@@ -1,6 +1,7 @@
 ﻿using ORM.Context;
 using ORM.Model;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -11,21 +12,21 @@ namespace ORM.Test
         [Fact]
         public async Task Add_Get_Should_AddAndReturnOrder()
         {
-            var product = new Product { Name = "Phone", Description = "Samsung" };
-            
+            var products = new List<Product>()
+            {
+                new Product {  Name = "Test1", Description = "Test1" },
+                new Product {  Name = "Test2", Description = "Test2" },
+            };
+
 
             using var context = new AppDbContext();
-            var productRepo = new ProductRepository(context);
             var orderRepo = new OrderRepository(context);
             var unit = new UnitOfWork(context);
 
-            await productRepo.AddAsync(product);
-            await unit.SaveAsync();
-
             var order = new Order
             {
-                ProductId = product.Id,
-                Status = "Ordered",
+                Products = products,
+                Status = "Waiting",
                 CreatedDate = DateTime.Now
             };
 

@@ -17,17 +17,17 @@ namespace ORM
 
         public async override Task<IEnumerable<Order>> GetAsync()
         {
-            return await DbSet.Include(o => o.Product).ToListAsync();
+            return await DbSet.Include(o => o.Products).ToListAsync();
         }
 
         public async override Task<IEnumerable<Order>> FindAsync(Expression<Func<Order, bool>> filter)
         {
-            return await DbSet.Where(filter).Include(o => o.Product).ToListAsync();
+            return await DbSet.Where(filter).Include(o => o.Products).ToListAsync();
         }
 
         public async override Task<Order> GetAsync(int id)
         {
-            return await DbSet.Where(o => o.Id == id).Include(o => o.Product).FirstOrDefaultAsync();
+            return await DbSet.Where(o => o.Id == id).Include(o => o.Products).FirstOrDefaultAsync();
         }
     }
 }

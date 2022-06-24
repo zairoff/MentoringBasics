@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ORM.Model
 {
@@ -6,9 +7,7 @@ namespace ORM.Model
     {
         public string Status { get; set; }
 
-        public int ProductId { get; set; }
-
-        public Product Product { get; set; }
+        public ICollection<Product> Products { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
