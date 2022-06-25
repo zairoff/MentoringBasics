@@ -39,18 +39,12 @@ namespace Task1
             if (customers == null || suppliers == null)
                 throw new ArgumentNullException();
 
-            //var result = customers.GroupBy(customer => new { customer.City, customer.Country })
-            //                    .Select(group => group.Select(customer =>
-            //                            (customer, suppliers.Where(supplier => 
-            //                                    supplier.City.Equals(customer.City) &&
-            //                                    supplier.Country.Equals(customer.Country)))));
+            var result = customers.Select(customer => (customer, 
+                                    suppliers.GroupBy(supplier => new { supplier.Country, supplier.City })
+                                            .SelectMany(group => group)
+                                            .Where(c => c.City.Equals(customer.City) && c.Country.Equals(customer.Country))));
 
-            var result = customers.GroupBy(customer => new { customer.City, customer.Country })
-                                    .Select(group => (group.Select(g => g),
-                                    suppliers.Where(supplier => supplier.Country.Equals(group.Key.Country)
-                                    && supplier.City.Equals(group.Key.City))));
-
-            return null;                         
+            return result;                         
                                     
         }
 
@@ -153,25 +147,29 @@ namespace Task1
             IEnumerable<Customer> customers
         )
         {
-            //var result = customers.GroupBy(customer => customer.City)
-            //                        .Select(group => new
-            //                        {
-            //                            City = group.Key,
-            //                            AverageIncome = group.Sum(g => g.Orders.Sum(o => o.Total)) / group.Count(),
-            //                            AverageIntensity = group.Sum(o => o.Orders.Count()) / group.Count()
-            //                        });
-
             var result = customers.GroupBy(customer => customer.City)
-                                    .Select(group => (group.Key,
-                                                    group.Sum(g => g.Orders.Sum(o => o.Total)) / group.Count(),
-                                                    group.Sum(o => o.Orders.Count()) / group.Count()));
+                                    .Select(group =>
+                                    (
+                                        group.Key,
+                                        group.Sum(g => g.Orders.Count()) > 0 ? (int)Math.Round(group.Sum(g => g.Orders.Sum(o => o.Total)) / group.Count()) : 0,
+                                        group.Sum(g => g.Orders.Count()) > 0 ? group.Sum(o => o.Orders.Count()) / group.Count() : 0
+                                    ));
 
-            return null;
+            return result;
         }
 
         public static string Linq10(IEnumerable<Supplier> suppliers)
         {
-            throw new NotImplementedException();
+            if (suppliers == null)
+                throw new ArgumentNullException();
+
+            var countries = suppliers.GroupBy(group => group.Country)
+                                    .SelectMany(grouped => grouped.Select(supplier => supplier.Country))
+                                    .Distinct()
+                                    .OrderBy(country => country.Length)
+                                    .ThenBy(country => country);
+
+            return string.Join("", countries);
         }
     }
 }
