@@ -21,12 +21,11 @@ namespace OOP.Repository
             _path = path;
         }
 
-        // predicate with string is not ideal, if we move to database that will be problem
-        public IEnumerable<T> Find(Func<string, bool> filter)
+        public IEnumerable<T> Find(IFilter filter)
         {
             var allFiles = _fileSystem.GetFiles(_path, _fileType);
 
-            var filteredFiles = allFiles.Where(filter);
+            var filteredFiles = allFiles.Where(file => file.Contains(filter.Number));
 
             var result = new List<T>();
 

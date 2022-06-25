@@ -1,4 +1,5 @@
-﻿using OOP.Contract;
+﻿using OOP;
+using OOP.Contract;
 using OOP.Documents;
 using OOP.Repository;
 using System;
@@ -13,8 +14,12 @@ namespace OOPConsole
                 return;
 
             var repo = new FileRepository<IDocument>(AppDomain.CurrentDomain.BaseDirectory);
+            var filter = new SearchFilter
+            {
+                Number = args[0]
+            };
 
-            var documents = repo.Find(b => b.Contains(args[0]));
+            var documents = repo.Find(filter);
 
             foreach(var document in documents)
             {
