@@ -35,9 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NET", "src\Module13\ADO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO.NET.Test", "src\Module13\ADO.NET.Test\ADO.NET.Test.csproj", "{57EFDAE8-CFC0-4867-B3B2-E893C3467A3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM", "src\Module14\ORM\ORM.csproj", "{97F5532F-907D-4E64-90DA-B4513FB54332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM", "src\Module14\ORM\ORM.csproj", "{97F5532F-907D-4E64-90DA-B4513FB54332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM.Test", "src\Module14\ORM.Test\ORM.Test.csproj", "{39033D79-6D6A-4EA1-82E0-0151DD7BD450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM.Test", "src\Module14\ORM.Test\ORM.Test.csproj", "{39033D79-6D6A-4EA1-82E0-0151DD7BD450}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpServer", "src\Module15\HttpServer\HttpServer.csproj", "{4338F66B-75D4-4797-961D-B7B371D3CB30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientConsole", "src\Module15\HttpClientConsole\HttpClientConsole.csproj", "{4578AB0B-752C-4A29-AF34-905BA200EBF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +121,14 @@ Global
 		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39033D79-6D6A-4EA1-82E0-0151DD7BD450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4338F66B-75D4-4797-961D-B7B371D3CB30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4338F66B-75D4-4797-961D-B7B371D3CB30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4338F66B-75D4-4797-961D-B7B371D3CB30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4338F66B-75D4-4797-961D-B7B371D3CB30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4578AB0B-752C-4A29-AF34-905BA200EBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4578AB0B-752C-4A29-AF34-905BA200EBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4578AB0B-752C-4A29-AF34-905BA200EBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4578AB0B-752C-4A29-AF34-905BA200EBF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
